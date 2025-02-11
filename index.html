@@ -4,19 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>عرض نموذج ثلاثي الأبعاد</title>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script>
 </head>
 <body>
 
     <h2>جربي المنتج في الواقع المعزز!</h2>
-    
+
     <model-viewer
         src="5_penan_handwoven_rattan_basket_handbag_style.glb" 
         alt="نموذج ثلاثي الأبعاد"
         auto-rotate
         camera-controls
-        ar>
+        ar 
+        ar-modes="webxr scene-viewer quick-look"
+        ios-src="5_penan_handwoven_rattan_basket_handbag_style.usdz">
     </model-viewer>
+
+    <!-- زر مخصص لتشغيل الواقع المعزز -->
+    <button onclick="startAR()">جربي في الواقع المعزز</button>
+
+    <script>
+        function startAR() {
+            document.querySelector("model-viewer").activateAR();
+        }
+    </script>
 
 </body>
 </html>
