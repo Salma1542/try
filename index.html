@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عرض نماذج ثلاثية الأبعاد</title>
+    <title>عرض نموذج ثلاثي الأبعاد</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script>
 </head>
 <body>
 
-    <h2>جربي المنتجات في الواقع المعزز!</h2>
+    <h2>جرب المنتج في الواقع المعزز!</h2>
 
-    <!-- عرض النموذج -->
-    <model-viewer id="arViewer"
+    <model-viewer
         src="5_penan_handwoven_rattan_basket_handbag_style.glb" 
         alt="نموذج ثلاثي الأبعاد"
         auto-rotate
@@ -21,24 +20,12 @@
         ios-src="5_penan_handwoven_rattan_basket_handbag_style.usdz">
     </model-viewer>
 
-    <!-- أزرار اختيار المنتجات -->
-    <div>
-        <button onclick="changeModel('5_penan_handwoven_rattan_basket_handbag_style')">حقيبة يدوية</button>
-        <button onclick="changeModel('handmade_wool_rug')">سجادة يدوية</button>
-    </div>
-
-    <!-- زر تشغيل الواقع المعزز -->
-    <button onclick="startAR()">جربي في الواقع المعزز</button>
+    <!-- زر مخصص لتشغيل الواقع المعزز -->
+    <button onclick="startAR()">جرب في الواقع المعزز</button>
 
     <script>
         function startAR() {
-            document.getElementById("arViewer").activateAR();
-        }
-
-        function changeModel(modelName) {
-            const viewer = document.getElementById("arViewer");
-            viewer.src = modelName + ".glb";
-            viewer.setAttribute("ios-src", modelName + ".usdz");
+            document.querySelector("model-viewer").activateAR();
         }
     </script>
 
